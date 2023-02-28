@@ -9,7 +9,7 @@ const Checklist = () => {
 
    useEffect(()=> {
       async function fetchDefault(){
-         const response = await fetch('http://localhost:8000/all', {mode: 'cors'})
+         const response = await fetch('https://d2-weekly-server.onrender.com/all', {mode: 'cors'})
          const data = await response.json()
          setChecklist(data)
        }
@@ -21,8 +21,8 @@ const Checklist = () => {
          <div className="header">
             <button
                   onClick={ () => {setDeleteMode(!deleteMode)} }
-                  className={`del-toggle ${deleteMode ? 'bg-red' : 'bg-dark-red'}`}>
-                     <i className="delete bi bi-trash-fill"></i>
+                  className={`del-toggle delete ${deleteMode ? 'bg-red' : 'bg-dark-red'}`}>
+                     <i className="bi bi-trash-fill"></i>
                   </button>
 
             <TaskForm refresher={{refresh, setRefresh}}/>
