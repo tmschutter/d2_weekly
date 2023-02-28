@@ -4,11 +4,11 @@ const dotenv = require('dotenv');
 const postgres = require('postgres');
 const cors = require('cors')
 
+const app = express();
+
 dotenv.config();
 
 app.use(express.static('../client/dist'))
-
-const app = express();
 
 app.use(cors({ origin: '*'}));
 
