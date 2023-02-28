@@ -6,6 +6,8 @@ const cors = require('cors')
 
 dotenv.config();
 
+app.use(express.static('../client/dist'))
+
 const app = express();
 
 app.use(cors({ origin: '*'}));
